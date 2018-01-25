@@ -1,38 +1,18 @@
 ---
-title: Hello World!!!
+title: 用GitHub Page搭建个人博客
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+记录一下我用hexo+github搭建个人博客的过程。
 
-## Quick Start
+## 在Github上配置
 
-### Create a new post
+### 建立一个仓库
 
-``` bash
-$ hexo new "My New Post"
-```
+>我使用的是个人博客，所以仓库的命名是按照<username>.github.io进行的。
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+### 创建开发分支
 
-### Run server
+>在本地clone远程仓库，再在本地增加hexo分支提交到远程。
 
-``` bash
-$ hexo server
-```
+## 在本地上开发
 
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/deployment.html)
+>安装hexo，新建一个hexo项目，搞一个主题，ok。
