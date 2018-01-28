@@ -195,21 +195,62 @@
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>目前网上的博客定制性很低，我一直想建立一个个人博客来锻炼自己的复盘能力和语文水平。直到我一年的云服务器到期，我还是没有做出任何动作。幸运的是，近期在网上闲逛，看到了在Github上搭建静态博客的消息，几经搜索和尝试，成功地上线了自己的个人博客，第一篇博文就以此为题，总结一下如何在Github上搭建个人博客，如果能帮助到你，不亦悦乎？</p>
-<p>我们都知道Github原本只是一个代码托管网站，我猜测是因为README.MD越来越不能满足对于整个项目的解释，而国外的作者没钱购买云服务来搭建一个讲解自己项目的网站，在这两个条件下，Github Page应运而生。</p>
-<p>关于Github Page是什么，在其官网上链接的是一个youtube视频，所以看不了。在我查阅了很多人写的博客，以及在自己搭建完个人博客之后，我认为可以简单理解为它是一个将你特定仓库里的特定分支的代码作为云应用服务的源码自动部署到互联网的一个功能。</p>
-<p>可能是Github认为，既然我提供以网站的形式描述你的项目，为什么不干脆也提供以网站的形式描述你自己，于是Github Pages也提供了这种服务，下面我就来仔细介绍如何搭建。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>目前网上的博客定制性很低，我一直想建立一个个人博客来锻炼自己的复盘能力和日渐萎缩的语文水平。虽然直到我一年的云服务器到期，我还是没有做出任何动作。但是近期在网上闲逛，看到了在Github上搭建静态博客的教程，几经搜索和尝试，成功地上线了自己的个人博客，第一篇博文就以此为题，总结一下如何在Github上搭建个人博客，如果能帮助到你，不亦悦乎？</p>
+<h1 id="什么是Github-Pages"><a href="#什么是Github-Pages" class="headerlink" title="什么是Github Pages"></a>什么是Github Pages</h1><p>我们都知道Github原本只是一个代码托管网站，我猜测是因为README.MD越来越不能满足对于整个项目的解释，而国外的作者没钱购买云服务来搭建一个讲解自己项目的网站，在这两个条件下，Github Page应运而生。</p>
+<p>关于Github Page是什么，在其官网上链接的是一个youtube视频，所以看不了。在我查阅了很多人写的博客教程，以及在自己搭建完个人博客之后，我认为可以简单理解为它是一个将你特定仓库里的特定分支的代码作为云应用服务的源码自动部署到互联网的一个功能。</p>
+<p>可能是Github认为，既然我提供以网站的形式描述你的项目，为什么不干脆也提供以网站的形式描述你自己，于是人们争相在Github上搭建个人博客。</p>
+<h1 id="如何搭建Github-Pages"><a href="#如何搭建Github-Pages" class="headerlink" title="如何搭建Github Pages"></a>如何搭建Github Pages</h1><blockquote>
 <p>搭建一个个人网站，根据Github Pages的官网上就提供教程，最快5个步骤就能搭建出一个可以在互联网上访问的个人网站。但是实际上，网上很多教程都是从注册Github开始，到用了XX工具，输入XX命令，最终如何如何，非常不友好。而我认为，作为一个开发人员，有些东西根本不用讲，就像对于普通用户一样，难道让他输入一个短信验证码他不会么？所以我以这5步为切入点，谈谈为什么这么做。</p>
-<p>第一步，在Github上创建一个仓库。这一步恐怕是最简单的了，在Github上可视化操作，甚至图都截出来了。唯一的重点是仓库名称一定是以你的Github用户名起头，.github.io结尾，我认为这样的做法是告诉Github这个仓库是需要你重点照顾的仓库，这个仓库名就是外网访问的地址。由于在Github上用户名是唯一的，所以这个域名也是唯一的。（特别提醒是username，不是name）</p>
-<p>第二步，（只分析使用Git控制台的情况）克隆刚刚创建的仓库到本地。这一步应该是最不需要解释的一步了，除非你不会用Git，在这里我推荐一个博客，它的作者认为代码托管工具只是工作流的一种具体实现，他以我最熟悉的svn工作流为切入点，从用git模拟这个工作流开始，谈到更复杂的工作流上。</p>
-<p>第三步，添加一个index.html。简单粗暴，网站肯定是html文件，这一步看起来简单，实际上告诉了我们Github托管的网站，index.html就是网站的默认路径。所以你应该全力以赴地用尽一切手段渲染这个html文件，这就促使了网上很多教程以hexo或者Jekyll等工具来丰富这个第三步，企图将教程一步到位，真的是naive。</p>
-<p>第四步，提交。还是简单粗暴，还是那句话，除非你不会用git。</p>
-<p>第五步，完成。更加简单粗暴，访问网址：<a href="https://username.github.io，我觉得我外婆都会这一步。" target="_blank" rel="noopener">https://username.github.io，我觉得我外婆都会这一步。</a></p>
-<p>网上很多教程到了这里就结束了，但是我的到这里才刚刚开始。完成这五步，虽然你能访问到自己的网站。但是这仅仅是一个hello world级别的网站，仅仅是把一个类似于README.MD放到了网上，下面我就来谈谈进阶。</p>
-<p>如果你不是前端开发<br>不会写html、css、js，这很正常，术业有专攻。回到你的本地仓库，我以hexo为例子，谈谈这种静态网站生成工具做了什么（没有认真仔细研究hexo，可能理解有偏颇）。hexo提供首页、文章页、侧栏、页面路由等接口，开放主题模块以供他人通过实现这些接口来创造主题。所以你只要在Github上搜索别人的开源主题，安装到你的hexo项目中（通常在README.MD中有主题安装介绍），修改一下标题图片等变成自己的主题。剩下的依靠hexo来创建博客，它会在指定目录中生成一个md文件，用你的markdown编辑器写博客就行了。最后用hexo生成一个网站，你可以复制到你的网站仓库中提交，也可以配置hexo让其自动提交到你的网站远程仓库。</p>
-<p>进阶<br>在你的网站仓库里新建一个分支来存放hexo源代码，然后配置hexo部署到master分支，这样你可以随时随地拉取你的博客生成器来写博客，提交部署一步完成，是开发者的福音。</p>
-<p>如果你是前端开发<br>有一种工具叫hexo，百度一下你就会了。甚至你不用这些生成工具，自己用vue+bootstrap写一个网站，或者新写一个网站生成器？</p>
-<p>总结<br>东西真多，学无止境，前端真的很好玩。</p>
+</blockquote>
+<h2 id="第一步，在Github上创建一个仓库。"><a href="#第一步，在Github上创建一个仓库。" class="headerlink" title="第一步，在Github上创建一个仓库。"></a>第一步，在Github上创建一个仓库。</h2><blockquote>
+<p>这一步恐怕是最简单的了，在Github上可视化操作，甚至图都截出来了。唯一的重点是仓库名称一定是以你的Github用户名起头，.github.io结尾，我认为这样的做法是告诉Github这个仓库是需要你重点照顾的仓库，这个仓库名就是外网访问的地址。由于在Github上用户名是唯一的，所以这个域名也是唯一的。（特别提醒是username，不是name）</p>
+</blockquote>
+<h2 id="第二步，克隆刚刚创建的仓库到本地。"><a href="#第二步，克隆刚刚创建的仓库到本地。" class="headerlink" title="第二步，克隆刚刚创建的仓库到本地。"></a>第二步，克隆刚刚创建的仓库到本地。</h2><blockquote>
+<p>这一步应该是最不需要解释的一步了，除非你不会用Git，在这里我推荐<a href="https://www.jianshu.com/p/91acec85c3a4" target="_blank" rel="noopener">一个博客</a>，它的作者认为代码托管工具只是工作流的一种具体实现，他以我最熟悉的svn工作流为切入点，从用git模拟这个工作流开始，谈到更复杂的工作流上。</p>
+</blockquote>
+<h2 id="第三步，添加一个index-html。"><a href="#第三步，添加一个index-html。" class="headerlink" title="第三步，添加一个index.html。"></a>第三步，添加一个index.html。</h2><blockquote>
+<p>简单粗暴，网站肯定是html文件，这一步看起来简单，实际上告诉了我们Github托管的网站的默认路由是该index.html。所以你应该全力以赴地用尽一切手段渲染这个html文件，这就促使了网上很多教程以hexo或者Jekyll等工具来丰富这个第三步，企图将教程一步到位，naive。</p>
+</blockquote>
+<h2 id="第四步，提交。"><a href="#第四步，提交。" class="headerlink" title="第四步，提交。"></a>第四步，提交。</h2><blockquote>
+<p>还是简单粗暴，还是那句话，除非你不会用git。</p>
+</blockquote>
+<h2 id="第五步，完成。"><a href="#第五步，完成。" class="headerlink" title="第五步，完成。"></a>第五步，完成。</h2><blockquote>
+<p>更加简单粗暴，访问网址：<code>https://username.github.io</code>。<br>简单到我觉得我外婆都会这一步。但是话说回来，这一步明显是Github封装了一个部署的过程。</p>
+</blockquote>
+<h1 id="美化Github-Pages"><a href="#美化Github-Pages" class="headerlink" title="美化Github Pages"></a>美化Github Pages</h1><p>完成以上的五步，虽然你能访问到自己的网站。但是这仅仅是一个hello world级别的网站，距离一个漂亮好看的网站，还差一个程序员的距离。</p>
+<h2 id="如果你不是前端开发"><a href="#如果你不是前端开发" class="headerlink" title="如果你不是前端开发"></a>如果你不是前端开发</h2><p>不会写html、css、js，这很正常，术业有专攻。不要慌，问题不大，有各种大佬站出来写了一系列静态网站生成器，比如说hexo。</p>
+<h3 id="Hexo是什么"><a href="#Hexo是什么" class="headerlink" title="Hexo是什么"></a>Hexo是什么</h3><p>似乎是一个台湾人写的一个博客网站生成器，使用者只需要挑选自己喜欢的主题以及使用markdown语法写博客，可惜的是没有可视化操作界面（可能是我不知道有）。<br>我又不负责地揣测Hexo是以主题驱动的一个代码生成器，它提供主页、文章页、侧栏组件等接口，通过实际的主题实现这些接口，这也说明了Hexo首次安装一定有一个默认主题。</p>
+<h3 id="Hexo使用方法"><a href="#Hexo使用方法" class="headerlink" title="Hexo使用方法"></a>Hexo使用方法</h3><p>以下步骤只是简单说明，详情见<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo文档</a>。</p>
+<h4 id="第一步，安装Hexo"><a href="#第一步，安装Hexo" class="headerlink" title="第一步，安装Hexo"></a>第一步，安装Hexo</h4><blockquote>
+<p>Hexo依赖NodeJs环境，所要要先安装NodeJs环境再安装Hexo。安装好后初始化一个Hexo项目即可。</p>
+</blockquote>
+<h4 id="第二步，挑选并安装主题"><a href="#第二步，挑选并安装主题" class="headerlink" title="第二步，挑选并安装主题"></a>第二步，挑选并安装主题</h4><blockquote>
+<p>在Github搜索“hexo theme”慢慢选吧，应该在README.MD中都能找到安装说明。接着修改一下主题配置使其成为自己的博客主题。</p>
+</blockquote>
+<h4 id="第三步，写博客"><a href="#第三步，写博客" class="headerlink" title="第三步，写博客"></a>第三步，写博客</h4><blockquote>
+<p>使用Hexo命令来创建新博客，旧博客可以在指定文件夹中直接修改md文件。</p>
+</blockquote>
+<h4 id="第四步，生成网站"><a href="#第四步，生成网站" class="headerlink" title="第四步，生成网站"></a>第四步，生成网站</h4><blockquote>
+<p>执行Hexo命令来生成网站</p>
+</blockquote>
+<h4 id="第五步，上传代码"><a href="#第五步，上传代码" class="headerlink" title="第五步，上传代码"></a>第五步，上传代码</h4><blockquote>
+<p>将网站代码复制到你的本地仓库中提交并推送到Github的远程仓库即可生效，完成此步就去访问吧。</p>
+</blockquote>
+<h3 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h3><blockquote>
+<ol>
+<li>可以在hexo中配置deploy属性来自动上传网站代码，以达到自动化构建目的。</li>
+<li>在你的网站仓库里新建一个分支来存放hexo源代码，然后配置hexo部署到master分支，这样你可以随时随地拉取你的博客生成器来写博客，提交部署一步完成，是开发者的福音。</li>
+</ol>
+</blockquote>
+<h2 id="如果你是前端开发"><a href="#如果你是前端开发" class="headerlink" title="如果你是前端开发"></a>如果你是前端开发</h2><p><strong>我这个项目价值5000万，就差一个设计了。</strong></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>着实没想到建立一个博客竟然有这么多内容，还有很多内容我都没有发掘，比如我想过年开一个坑，用vue+bootstrap美化自己的博客。这一篇文章是我在搭建完成之后穷尽自己记忆写下来，希望以后能在事情做完之后能牢记自己做过什么。</p>
+<h1 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h1><blockquote>
+<ol>
+<li><a href="https://www.jianshu.com/p/91acec85c3a4" target="_blank" rel="noopener">深入理解学习Git工作流</a></li>
+<li><a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a></li>
+<li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo文档</a></li>
+</ol>
+</blockquote>
 
     </article>
     <!-- 前后页  -->
@@ -282,7 +323,7 @@
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是Github-Pages"><span class="toc-number">2.</span> <span class="toc-text">什么是Github Pages</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#如何搭建Github-Pages"><span class="toc-number">3.</span> <span class="toc-text">如何搭建Github Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一步，在Github上创建一个仓库。"><span class="toc-number">3.1.</span> <span class="toc-text">第一步，在Github上创建一个仓库。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二步，克隆刚刚创建的仓库到本地。"><span class="toc-number">3.2.</span> <span class="toc-text">第二步，克隆刚刚创建的仓库到本地。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三步，添加一个index-html。"><span class="toc-number">3.3.</span> <span class="toc-text">第三步，添加一个index.html。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第四步，提交。"><span class="toc-number">3.4.</span> <span class="toc-text">第四步，提交。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第五步，完成。"><span class="toc-number">3.5.</span> <span class="toc-text">第五步，完成。</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#美化Github-Pages"><span class="toc-number">4.</span> <span class="toc-text">美化Github Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#如果你不是前端开发"><span class="toc-number">4.1.</span> <span class="toc-text">如果你不是前端开发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo是什么"><span class="toc-number">4.1.1.</span> <span class="toc-text">Hexo是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo使用方法"><span class="toc-number">4.1.2.</span> <span class="toc-text">Hexo使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#第一步，安装Hexo"><span class="toc-number">4.1.2.1.</span> <span class="toc-text">第一步，安装Hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二步，挑选并安装主题"><span class="toc-number">4.1.2.2.</span> <span class="toc-text">第二步，挑选并安装主题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第三步，写博客"><span class="toc-number">4.1.2.3.</span> <span class="toc-text">第三步，写博客</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第四步，生成网站"><span class="toc-number">4.1.2.4.</span> <span class="toc-text">第四步，生成网站</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第五步，上传代码"><span class="toc-number">4.1.2.5.</span> <span class="toc-text">第五步，上传代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小技巧"><span class="toc-number">4.1.3.</span> <span class="toc-text">小技巧</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如果你是前端开发"><span class="toc-number">4.2.</span> <span class="toc-text">如果你是前端开发</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#相关资料"><span class="toc-number">6.</span> <span class="toc-text">相关资料</span></a></li></ol>
     </div>
     
     <div class="back-top">&#xe639;</div>
