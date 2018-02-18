@@ -9,7 +9,9 @@ module.exports = {
 
     module: {
         rules: [
-            { test: /\.vue$/, loader: 'vue-loader' }
+            { test: /\.vue$/, loader: 'vue-loader' },
+            { test: /\.css$/, use: ['style-loader', 'css-loader']},
+            { test: /\.(png|jpg|gif)$/, use: [{loader: 'file-loader', options: {outputPath: 'img/'}}] }
         ]
     },
 
