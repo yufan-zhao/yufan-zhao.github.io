@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar fixed-top justify-content-between customered-navbar">
-        <div class="navbar-menu">
+        <div class="navbar-menu" v-on:click.stop="toggleMenu">
             <span class="menu-icon"></span>
         </div>
         <a class="navbar-brand" href="#">Yufan's Blog</a>
@@ -8,7 +8,13 @@
 </template>
 
 <script>
-
+export default {
+    methods: {
+        toggleMenu() {
+            this.$store.commit('toggleMenu');
+        }
+    }
+}
 </script>
 
 <style lang="less">

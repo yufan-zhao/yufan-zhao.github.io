@@ -1,13 +1,18 @@
 <template>
-    <section class="sidebar">
+    <section class="sidebar" v-bind:class="{ show: menuOpened }">
 
     </section>
 </template>
 
 <script>
 export default {
+    computed: {
+        menuOpened() {
+            return this.$store.state.menuOpened;
+        }
+    },
     created () {
-        console.log(this.$store.state.menuOpend);
+        console.log('init sidebar: ' + this.$store.state.menuOpened);
     }
 }
 </script>
@@ -16,7 +21,8 @@ export default {
 .sidebar{
     width: 300px;
     height: 100%;
-    background-color: red;
+    background-color: #222;
+    box-shadow: 0px 0px 5px #222;
     position: absolute;
     left: 0;
     top: 0;
