@@ -1,17 +1,15 @@
-import _ from 'lodash';
 import Vue from 'vue';
-import VueRouter from 'vue-router';
-Vue.use(VueRouter);
 import store from './store';
+import router from './router';
+import Blog from './AppBlog.vue';
 
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Blog from '../src/pages/blog.vue';
-
-let vm = new Vue({
+let blogVm = new Vue({
     el: '#app',
-    template: '<Blog />',
     store,
+    router,
+    template: '<Blog />',
     components: { Blog }
 });
