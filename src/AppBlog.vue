@@ -4,17 +4,20 @@
 
     <router-view></router-view>
 
+    <Footer />
     <Sidebar />
 </div>
 </template>
 
 <script>
 import Navbar from './components/nav.vue';
+import Footer from './components/footer.vue';
 import Sidebar from './components/sidebar.vue';
 
 export default {
     components: {
         Navbar,
+        Footer,
         Sidebar
     }
 }
@@ -23,7 +26,6 @@ export default {
 <style lang="less">
 .app-container{
     overflow-x: hidden;
-    position: relative;
     z-index: 0;
     height: 100%;
     background-color: #fff;
