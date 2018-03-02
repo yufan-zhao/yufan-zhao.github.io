@@ -2,8 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
-import PageList from '../pages/PageList.vue';
-import PageDetail from '../pages/PageDetail.vue';
+const PageList = () => import('../pages/PageList.vue');
+const PageDetail = () => import('../pages/PageDetail.vue');
 
 const routes = [
     { path: '/', component: PageList },

@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/yufan-zhao/yufan-zhao.github.io#readme",
   "devDependencies": {
+    "axios": "^0.18.0",
     "bootstrap": "^4.0.0",
     "clean-webpack-plugin": "^0.1.18",
     "css-loader": "^0.28.9",
@@ -28,6 +29,7 @@
     "jquery": "^3.3.1",
     "less": "^3.0.1",
     "less-loader": "^4.0.5",
+    "markdown": "^0.5.0",
     "popper.js": "^1.12.9",
     "style-loader": "^0.20.2",
     "vue": "^2.5.13",

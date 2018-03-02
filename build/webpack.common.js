@@ -11,7 +11,8 @@ module.exports = {
         rules: [
             { test: /\.vue$/, loader: 'vue-loader' },
             { test: /\.css$/, use: ['style-loader', 'css-loader']},
-            { test: /\.(png|jpg|gif)$/, use: [{loader: 'file-loader', options: {outputPath: 'img/'}}] }
+            { test: /\.(png|jpg|gif)$/, use: [{loader: 'file-loader', options: {outputPath: 'img/'}}] },
+            { test: /\.(json|md)$/, use: [{loader: 'file-loader', options: {outputPath: 'data/'}}] }
         ]
     },
 
